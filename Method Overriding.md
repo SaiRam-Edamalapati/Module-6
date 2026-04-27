@@ -1,38 +1,45 @@
-# 🐟 Method Overriding-Fish and Shark Class Inheritance in Python
+# 🐍 Python OOP: Operator Overloading (Less Than `<`)
 
-## 🧠 AIM:
-To write a Python program that demonstrates class inheritance by creating a parent class `Fish` with a method `type`, and a child class `Shark` that overrides the `type` method.
+## 🎯 AIM
 
-## 📋 ALGORITHM:
+To write a Python program that demonstrates **operator overloading** by overloading the **less than (`<`)** operator using a custom class.
 
-1. Define the `Fish` class with a method named `type()` that prints `"fish"`.
-2. Define the `Shark` class as a subclass of `Fish`, and override the `type()` method to print `"shark"`.
-3. Create an instance of the `Fish` class named `obj_goldfish`.
-4. Create an instance of the `Shark` class named `obj_hammerhead`.
-5. Use a `for` loop to iterate over both objects.
-6. Within the loop, call the `type()` method using the loop variable.
-7. Output will demonstrate method overriding: printing `"fish"` and `"shark"` accordingly.
+---
 
-## 💻 PROGRAM:
+## 🧠 ALGORITHM
+
+1. **Create Class `A`**:
+   - Define the `__init__()` method to initialize the object with a value `a`.
+
+2. **Overload the `<` Operator**:
+   - Define the `__lt__()` method with logic:
+     - If `self.a < o.a`, return `"ob1 is less than ob2"`
+     - Else, return `"ob2 is less than ob1"`
+
+3. **Create Objects**:
+   - Instantiate two objects `ob1` and `ob2` with values.
+
+4. **Use `<` Operator**:
+   - Use `print(ob1 < ob2)` to trigger the overloaded behavior.
+
+---
+
+## 💻 Program
 ```
-class Fish:
-    def type(self):
-        print("fish")
-
-
-class Shark:
-    def type(self):
-        print("shark")
-
-
-obj_goldfish = Fish()
-obj_hammerhead = Shark()
-
-obj_goldfish.type()
-obj_hammerhead.type()
+class A:
+    def __init__(self,a):
+        self.a=a
+    def __lt__(self,other):
+        return self.a<other.a
+ob1=A(200)
+ob2=A(30)
+if(ob1<ob2):
+    print("ob1 is less than ob2")
+else:
+    print("ob2 is less than ob1")
 ```
-## OUTPUT
-<img width="839" height="289" alt="image" src="https://github.com/user-attachments/assets/4352198c-8aa7-4785-99ac-8a2ac652becc" />
+## Output
+<img width="1177" height="268" alt="image" src="https://github.com/user-attachments/assets/04136876-d58a-4afe-bf71-f1c5a618fd17" />
 
-## RESULT
+## Result
 Thus,the program is executed successfully.
